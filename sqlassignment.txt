@@ -1,0 +1,72 @@
+
+1.	Display all departments from department table.
+->select * from departments;
+
+2.	Display all employees from employee table.
+->select * from employees;
+
+3.	Select the employees in department 30.
+->select * from employees where deparment_id=30;
+
+4.	List the names, numbers and departmentno of all clerks.
+->select first_name,last_name,phone_number,department_id from employees where job_id LIKE "%_CLERK";
+
+5.	Find the depart numbers and the name of employee of all dept with Deptno greater or equal to 20.
+->select department_id,first_name,last_name from employees where department_id >= 20;
+
+9.	List the name, job and salary of all employees in dept 20 who earn more than 2000.
+->select first_name,Last_name,salary from employees where department_id=20 and salary>2000;
+
+10.	Find all salesmen in dept 30 whose salary is greater than or equal to Rs. 1500.
+->select first_name,Last_name from employees where job_id like "%_man" and department_id=30 and salary>=1500;
+
+11.	Find all the employees whose job is either a president or manager.
+->select job_id,first_name,Last_name from employees where job_id like "%_pres" or job_id like "%_mana";
+
+12.	Find all managers who are not in dept 30.
+->select first_name,last_name from employees where job_id like "%_mgr" and department_id!=30;
+
+13.	Find the details of all managers and clerks in dept 10.
+-> select * from employees where job_id like "%_mgr" and job_id like "%_clerk" and department_id=10;
+
+14.	Find the details of all manager (in any dept) and all clerks in dept 10.
+->select * from employees where job_id like "%_mgr" or (job_id like "%_clerk" and department_id=10);
+
+15.	Find the details of all managers in dept 10 and all clerks in dept 20.
+->select * from employees where (job_id like "%_mgr" and department_id=10)or(job_id like "%_clerk" and department_id=20);
+
+16.	Find all employees who are neither clerks nor manager but whose salary is greater than or equal to Rs. 2000.
+-> select * from employees where job_id not like "%_mgr" and job_id not like "%_clerk" and salary>=2000;
+
+17.	Find the employees who earns between Rs. 1200 and Rs.1400.
+-> select * from employees where salary>1200 and salary <1400;
+
+18.	Find the employees who are clerks, analysts or salesman.
+->select * from employees where job_id like "%_clerks or job_id like "%_asst" or job_id like "%_man";
+
+19.	Find the employees who are not clerks, analyst or salesman.
+->select * from employees where job_id not like "%_clerk" and  job_id not like "%_asst" and job_id not like "%_man";
+
+20.	Find the employees who do not receive a commission i.e. commission is NULL.
+->select * from employees where commission_pct is NULL;
+
+21.	Find the employee whose commission is Rs. 0.
+-> select * from employees where commission_pct=0;
+
+22.	Find the different jobs of the employees receiving commission.
+->select job_id from employees where commission_pct is not NULL;
+
+23.	Find all employees who do not receive a commission or whose Commission is less than Rs. 100. 
+24.	The employees who not receiving commission are entailed to Rs. 250, Show the net earnings of all employees. (find about nvl() )
+25.	Find all employees whose total earnings are greater than Rs. 2000.   
+
+26.	Find all employees whose names begin with m.
+-> select * from employees where first_name like "m%";
+
+27.	Find all employees whose names end with m.
+-> select * from employees where last_name like "%m";
+
+28.	Find all employees whose names contain the letter m.
+-> select * from employees where first_name like "%m%" or Last_name like "%m%";
+
+29.	Find the employees whose names are 5 characters long and end with n.
